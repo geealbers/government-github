@@ -130,10 +130,10 @@ def upsert_repositories(o_data):
         repository = r_formatter(r_item)
         source_login = repository['source_owner_login']
         if source_login:
-            repository['source_civic'] = source_login.lower() in organizations_civic
-            repository['source_government'] = source_login.lower() in organizations_government
+            repository['source_friend'] = source_login.lower() in organizations_friend
+            repository['source_museum'] = source_login.lower() in organizations_museum
         else:
-            repository['source_government'] = True
+            repository['source_museum'] = True
         repository = upsert(model=Repository, unique_key='id', item=repository)
         repositories.append(repository)
 
@@ -204,20 +204,20 @@ if __name__ == "__main__":
     if not progress:
         progress = Progress(id="progress", value=0)
 
-    with open('government.github.com/_data/governments.yml') as infile:
+    with open('data-src/museums.yml') as infile:
         _data = yaml.load(infile)
     data = reshape_data(_data)
-    organizations_government = set([organization['entity'].lower() for organization in data])
+    organizations_museum = set([organization['entity'].lower() for organization in data])
 
-    with open('government.github.com/_data/civic_hackers.yml') as infile:
-        _data_civic = yaml.load(infile)
-    data_civic = reshape_data(_data_civic)
-    organizations_civic = set([organization['entity'].lower() for organization in data_civic])
+    with open('data-src/friends.yml') as infile:
+        _data_friend = yaml.load(infile)
+    data_friend = reshape_data(_data_friend)
+    organizations_friend = set([organization['entity'].lower() for organization in data_friend])
 
     for i in xrange(progress.value, len(data)):
         logging.info("{} {} {}".format(i, data[i]['entity'], data[i]['grouping']))
         try:
-            o_data = upsert_organization(data[i]['entity'], data[i]['grouping'], "government")
+            o_data = upsert_organization(data[i]['entity'], data[i]['grouping'], "museums")
             r_data = upsert_repositories(o_data)
             upsert_contributors(o_data, r_data)
             upsert_members(o_data)

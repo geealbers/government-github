@@ -11,7 +11,7 @@ def file_iterator(fn):
 
 
 def write_graph(graph, graph_type, fn):
-    filename = 'gov/graphs/{name}-network.{extension}'.format(name=fn, extension=graph_type)
+    filename = 'muse/graphs/{name}-network.{extension}'.format(name=fn, extension=graph_type)
     if graph_type == 'json':
         data = json_graph.node_link_data(graph)
         with open(filename, 'wb') as outfile:
@@ -23,7 +23,7 @@ def write_graph(graph, graph_type, fn):
 
 def contribution_graph():
     graph = networkx.Graph()
-    for item in file_iterator('gov/data/contributor.json'):
+    for item in file_iterator('muse/data/contributor.json'):
         graph.add_node(item['login_1'], node_type='organization', grouping=item['grouping_1'])
         graph.add_node(item['login_2'], node_type='organization', grouping=item['grouping_2'])
         graph.add_edge(item['login_1'], item['login_2'], weight=int(item['count']))
@@ -32,7 +32,7 @@ def contribution_graph():
 
 def membership_graph():
     graph = networkx.Graph()
-    for item in file_iterator('gov/data/member.json'):
+    for item in file_iterator('muse/data/member.json'):
         print(item)
         graph.add_node(item['login_1'], node_type='organization', grouping=item['grouping_1'])
         graph.add_node(item['login_2'], node_type='organization', grouping=item['grouping_2'])
@@ -42,7 +42,7 @@ def membership_graph():
 
 def forking_graph():
     graph = networkx.DiGraph()
-    for item in file_iterator('gov/data/fork_government.json'):
+    for item in file_iterator('muse/data/fork_museums.json'):
         graph.add_node(item['forked_from'], node_type='organization', grouping=item['forked_from_grouping'])
         graph.add_node(item['forked_by'], node_type='organization', grouping=item['forked_by_grouping'])
         graph.add_edge(item['forked_from'], item['forked_by'], edge_type="from")

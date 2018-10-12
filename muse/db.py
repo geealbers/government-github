@@ -14,6 +14,6 @@ Base.query = session.query_property()
 
 
 def init_db():
-    import gov.models
+    import muse.models
     Base.metadata.drop_all(engine)
     Base.metadata.create_all(bind=engine)
