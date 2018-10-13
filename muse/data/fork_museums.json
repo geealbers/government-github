@@ -1,0 +1,90 @@
+{
+  "count": 12,
+  "meta": {},
+  "results": [
+    {
+      "forked_by": "CMP-Studio",
+      "forked_by_grouping": "United States",
+      "forked_from": "cmoa",
+      "forked_from_grouping": "United States",
+      "count": 3
+    },
+    {
+      "forked_by": "BarnesFoundation",
+      "forked_by_grouping": "United States",
+      "forked_from": "cooperhewitt",
+      "forked_from_grouping": "United States",
+      "count": 2
+    },
+    {
+      "forked_by": "ColbyMuseum",
+      "forked_by_grouping": "United States",
+      "forked_from": "american-art",
+      "forked_from_grouping": "United States",
+      "count": 2
+    },
+    {
+      "forked_by": "NordicMuseum",
+      "forked_by_grouping": "Sweden",
+      "forked_from": "CMP-Studio",
+      "forked_from_grouping": "United States",
+      "count": 2
+    },
+    {
+      "forked_by": "mplusmuseum",
+      "forked_by_grouping": "Hong Kong",
+      "forked_from": "cooperhewitt",
+      "forked_from_grouping": "United States",
+      "count": 2
+    },
+    {
+      "forked_by": "ACMTX",
+      "forked_by_grouping": "United States",
+      "forked_from": "american-art",
+      "forked_from_grouping": "United States",
+      "count": 1
+    },
+    {
+      "forked_by": "NordicMuseum",
+      "forked_by_grouping": "Sweden",
+      "forked_from": "nasjonalmuseet",
+      "forked_from_grouping": "Norway",
+      "count": 1
+    },
+    {
+      "forked_by": "NordicMuseum",
+      "forked_by_grouping": "Sweden",
+      "forked_from": "riksantikvarieambetet",
+      "forked_from_grouping": "Sweden",
+      "count": 1
+    },
+    {
+      "forked_by": "WaltersArtMuseum",
+      "forked_by_grouping": "United States",
+      "forked_from": "american-art",
+      "forked_from_grouping": "United States",
+      "count": 1
+    },
+    {
+      "forked_by": "artsmia",
+      "forked_by_grouping": "United States",
+      "forked_from": "ACMILabs",
+      "forked_from_grouping": "Australia",
+      "count": 1
+    },
+    {
+      "forked_by": "harvardartmuseums",
+      "forked_by_grouping": "United States",
+      "forked_from": "cooperhewitt",
+      "forked_from_grouping": "United States",
+      "count": 1
+    },
+    {
+      "forked_by": "thewarholmuseum",
+      "forked_by_grouping": "United States",
+      "forked_from": "CMP-Studio",
+      "forked_from_grouping": "United States",
+      "count": 1
+    }
+  ]
+}
